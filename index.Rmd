@@ -168,6 +168,9 @@ norms <- impact %>%
 norms <- norms %>% 
   filter(test_type == "Baseline")
 
+norms <- norms %>% 
+  na.omit()
+
 norms_age_range <- norms %>% 
   filter(age >= 12 & age <= 18)
 
@@ -188,7 +191,7 @@ total_all <- norms %>%
 total_age_range <- norms_age_range %>% 
   summarize(length(passport_id))
 
-total_sum <- data.frame("Level" = c("All Baseline Tests", "Baseline Tests Ages 12-18"), "Total" = c(85638, 80892))
+total_sum <- data.frame("Level" = c("All Baseline Tests", "Baseline Tests Ages 12-18"), "Total" = c(83998, 79481))
 
 ```
 
@@ -340,14 +343,8 @@ age_17_18 <- norms_age_range %>%
 
 ### Verbal Memory 
 
-```{r, include=FALSE}
-age_12_mem_verbal <- age_12 %>% 
-  select(verbal_memory) %>% 
-  na.omit()
-```
-
 ```{r, include=TRUE}
-create_react(age_12_mem_verbal, verbal_memory)
+create_react(age_12, verbal_memory)
 ```
 
 ### Visual Memory
@@ -374,3 +371,167 @@ create_react(age_12, impulse_control)
 create_react(age_12, reaction_time)
 ```
 
+
+## Age 13 {.tabset .tabset-fade .tabset-pills}
+
+### Verbal Memory 
+
+```{r, include=TRUE}
+create_react(age_13, verbal_memory)
+```
+
+### Visual Memory
+
+```{r, include=TRUE}
+create_react(age_13, visual_memory)
+```
+
+### Visual Motor
+
+```{r, include=TRUE}
+create_react(age_13, visual_motor)
+```
+
+### Impulse Control
+
+```{r, include=TRUE}
+create_react(age_13, impulse_control)
+```
+
+### Reaction Time
+
+```{r, include=TRUE}
+create_react(age_13, reaction_time)
+```
+
+
+## Age 14 {.tabset .tabset-fade .tabset-pills}
+
+### Verbal Memory 
+
+```{r, include=TRUE}
+create_react(age_14, verbal_memory)
+```
+
+### Visual Memory
+
+```{r, include=TRUE}
+create_react(age_14, visual_memory)
+```
+
+### Visual Motor
+
+```{r, include=TRUE}
+create_react(age_14, visual_motor)
+```
+
+### Impulse Control
+
+```{r, include=TRUE}
+create_react(age_14, impulse_control)
+```
+
+### Reaction Time
+
+```{r, include=TRUE}
+create_react(age_14, reaction_time)
+```
+
+
+## Age 15 {.tabset .tabset-fade .tabset-pills}
+
+### Verbal Memory 
+
+```{r, include=TRUE}
+create_react(age_15, verbal_memory)
+```
+
+### Visual Memory
+
+```{r, include=TRUE}
+create_react(age_15, visual_memory)
+```
+
+### Visual Motor
+
+```{r, include=TRUE}
+create_react(age_15, visual_motor)
+```
+
+### Impulse Control
+
+```{r, include=TRUE}
+create_react(age_15, impulse_control)
+```
+
+### Reaction Time
+
+```{r, include=TRUE}
+create_react(age_15, reaction_time)
+```
+
+
+## Age 16 {.tabset .tabset-fade .tabset-pills}
+
+### Verbal Memory 
+
+```{r, include=TRUE}
+create_react(age_16, verbal_memory)
+```
+
+### Visual Memory
+
+```{r, include=TRUE}
+create_react(age_16, visual_memory)
+```
+
+### Visual Motor
+
+```{r, include=TRUE}
+create_react(age_16, visual_motor)
+```
+
+### Impulse Control
+
+```{r, include=TRUE}
+create_react(age_16, impulse_control)
+```
+
+### Reaction Time
+
+```{r, include=TRUE}
+create_react(age_16, reaction_time)
+```
+
+
+## Ages 17-18 {.tabset .tabset-fade .tabset-pills}
+
+### Verbal Memory 
+
+```{r, include=TRUE}
+create_react(age_17_18, verbal_memory)
+```
+
+### Visual Memory
+
+```{r, include=TRUE}
+create_react(age_17_18, visual_memory)
+```
+
+### Visual Motor
+
+```{r, include=TRUE}
+create_react(age_17_18, visual_motor)
+```
+
+### Impulse Control
+
+```{r, include=TRUE}
+create_react(age_17_18, impulse_control)
+```
+
+### Reaction Time
+
+```{r, include=TRUE}
+create_react(age_17_18, reaction_time)
+```
