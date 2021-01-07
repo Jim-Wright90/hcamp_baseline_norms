@@ -535,3 +535,57 @@ create_react(age_17_18, impulse_control)
 ```{r, include=TRUE}
 create_react(age_17_18, reaction_time)
 ```
+
+# Model Relationship Between Age and Impact Scores {.tabset .tabset-fade .tabset-pills}
+
+Overall, there are significant differences between average scores and the different ages with older ages achieving better scores, but the models do not account for much variance to define a strong relationship between age and score performance. 
+
+```{r, include=TRUE}
+model_data <- norms_age_range %>% 
+  mutate(age = as.factor(age),
+         gender = as.factor(gender),
+         sport = as.factor(sport))
+```
+
+## Verbal Memory 
+
+```{r, include=TRUE}
+verbal_memory_age_mod <- lm(verbal_memory ~ age, data = model_data)
+
+summary(verbal_memory_age_mod)
+```
+
+
+## Visual Memory 
+
+```{r, include=TRUE}
+visual_memory_age_mod <- lm(visual_memory ~ age, data = model_data)
+
+summary(visual_memory_age_mod)
+```
+
+
+## Visual Motor 
+
+```{r, include=TRUE}
+visual_motor_age_mod <- lm(visual_motor ~ age, data = model_data)
+
+summary(visual_motor_age_mod)
+```
+
+## Impulse Control
+
+```{r, include=TRUE}
+impulse_control_age_mod <- lm(impulse_control ~ age, data = model_data)
+
+summary(impulse_control_age_mod)
+```
+
+## Reaction Time 
+
+```{r, include=TRUE}
+reaction_time_age_mod <- lm(reaction_time ~ age, data = model_data)
+
+summary(reaction_time_age_mod)
+```
+
